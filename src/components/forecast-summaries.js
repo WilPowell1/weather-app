@@ -1,5 +1,6 @@
 import React from 'react';
 import ForecastSummary from './forecast-summary';
+import PropTypes from 'prop-types';
 
 const ForecastSummaries = props => (
   <div className="forecast-summaries">
@@ -20,7 +21,8 @@ const ForecastSummaries = props => (
 
 ForecastSummaries.propTypes = {
   forecasts: PropTypes.array.isRequired,
-  onSelect: PropTypes.func.
+  onSelect: PropTypes.func,
+  onForecastSelect: PropTypes.func
 }
 
 export default ForecastSummaries;
