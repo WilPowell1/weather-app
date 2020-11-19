@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import WeatherIcon from 'react-icons-weather';
+import '../styles/forecast-summary.css';
 import moment from 'moment';
 
 const ForecastSummary = (props) => {
   return (
-    <div className="forecast-summary">
+    <div className="container">
       <div className="date" data-testid="date-id">
         {moment(props.date).format("dddd Do MMM")}       
       </div>
