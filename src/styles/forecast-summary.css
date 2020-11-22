@@ -8,7 +8,7 @@
     border: 1px groove rgb(254, 255, 172);
 }
 .date, .temperature, .description, .icon {
-    color: white;
+    color: rgb(202, 12, 12);
 }
 
 button {
