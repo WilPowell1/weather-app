@@ -17,7 +17,7 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState(false);
 
   useEffect(() => {
-    axios.get('https://mcr-codes-weather.herokuapp.com/forecast?city=Manchester')
+    axios.get('https://mcr-codes-weather.herokuapp.com/forecast?city=Llangollen')
     .then(res => {
         setLocation(res.data.location)
         setForecasts(res.data.forecasts)
