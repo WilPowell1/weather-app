@@ -1,14 +1,23 @@
 .container {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     height: 400px;
     width: 250px;
-    border: 1px groove rgb(254, 255, 172);
+    border: 1px groove rgba(133, 133, 127);
+    border-radius: 12px;
+    box-shadow: rgba(133, 133, 127);
 }
+
+.container:hover {
+    background-image: url(../images/Free-Weather-Background.jpg);
+}
+
 .date, .temperature, .description, .icon {
-    color: rgb(230, 211, 211)1);
+    color: rgb(230, 211, 211)1;
 }
 
 button {

@@ -49,7 +49,7 @@ const searchCity = () => {
   };
 
     return (
-      <div>
+      <div className="forecast">
         <LocationDetails
           city={location.city}
           country={location.country}/>
