@@ -21,9 +21,11 @@ const ForecastSummaries = props => (
 );
 
 ForecastSummaries.propTypes = {
-  forecasts: PropTypes.array.isRequired,
-  onSelect: PropTypes.func,
-  onForecastSelect: PropTypes.func
+    date: PropTypes.any,
+    temperature: PropTypes.any,
+    description: PropTypes.string,
+    icon: PropTypes.any,
+    onSelect: PropTypes.func
 }
 
 export default ForecastSummaries;
