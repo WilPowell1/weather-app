@@ -5,6 +5,12 @@
     background-color: rgb(168, 37, 37);
 }*/
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /*body {
     margin: 20px;
     min-height: 100%;
