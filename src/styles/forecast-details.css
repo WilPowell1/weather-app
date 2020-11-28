@@ -1,5 +1,26 @@
-h1 {
-    font-size: 80px;
+.forecast-details {
+    background: rgb(20, 50, 180);
+    color: white;
     margin-top: 50px;
     margin-left: 70px;
+    font-family: 'montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0 40%;
+    box-shadow: 3px 3px 8px rgb(51, 54, 54);
+}
+
+h3 {
+    background: transparent;
+    font-weight: 400;
+}
+
+div {
+    background: transparent;
 }

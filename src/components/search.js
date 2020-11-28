@@ -11,7 +11,7 @@ const searchForm = (props) => {
         <div className="search-form">
             <input className="input" data-testid="input-id" type="text" placeholder="Search for..." value={props.searchText} onChange={handleInputChange}/>
             
-            <button className="button" data-testid="button-id" onClick={props.onSearch}>Search</button>
+            <button className="button" data-testid="button-id" onClick={props.onSearch}>search</button>
         </div>
     )
 }

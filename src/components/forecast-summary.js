@@ -25,7 +25,7 @@ const ForecastSummary = (props) => {
 };
 
 ForecastSummary.propTypes = {
-  date: PropTypes.number,
+    date: PropTypes.number,
     temperature: PropTypes.any,
     description: PropTypes.string,
     icon: PropTypes.any,
