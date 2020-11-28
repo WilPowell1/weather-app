@@ -14,12 +14,12 @@ const ForecastSummary = (props) => {
         <WeatherIcon name="owm" iconId={props.icon} />
       </div>
       <div className="temperature" data-testid="temperature-id">
-        {props.temperature}
+        {props.temperature}℃
       </div>
       <div className="description" data-testid="description-id">
         {props.description}
       </div>
-      <button onClick={() => props.onSelect(props.date)}>More details</button>
+      <button onClick={() => props.onSelect(props.date)}>more details</button>
     </div>
   );
 };

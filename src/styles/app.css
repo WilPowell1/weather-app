@@ -1,14 +1,8 @@
-/*.forecast {
-    font-family: sans-serif;
-    margin: auto;
-    border: auto;
-    background-color: rgb(168, 37, 37);
-}*/
-
-* {
+*, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color:rgb(223, 250, 246);
 }
 
 /*body {

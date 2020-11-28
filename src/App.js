@@ -4,7 +4,8 @@ import './App.css';
 import LocationDetails from './components/location-details';
 import ForecastSummaries from './components/forecast-summaries';
 import './styles/app.css';
-import './styles/forecast-summaries.css';
+import './styles/forecast-summary.css';
+import './styles/forecast-details.css';
 import ForecastDetails from './components/forecast-details';
 import ErrorMessage from './components/error';
 import searchForm from './components/search';
@@ -49,7 +50,7 @@ const searchCity = () => {
   };
 
     return (
-      <div className="forecast">
+      <div className>
         <LocationDetails
           city={location.city}
           country={location.country}/>
