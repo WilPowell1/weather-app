@@ -9,7 +9,7 @@
   }
 
   .input{
-    color: rgb(82, 82, 82);
+    color: rgb(99, 99, 99);
     width: 300px;
     border: transparent;
     background: transparent;
@@ -22,13 +22,11 @@
     color: #fc913a;
     background: #fff;
     border: 3px solid white;
-    width: 120px;
-    height: 55px;
     border-radius: 50px;
-    outline: none;
-    text-transform: uppercase;
     font-weight: bold;
     transition: 200ms linear;
+    padding: 3%;
+    width: 30%;
   }
 
   .search-button:hover {
