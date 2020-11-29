@@ -4,7 +4,7 @@ import LocationDetails from './components/location-details';
 import ForecastSummaries from './components/forecast-summaries';
 import ForecastDetails from './components/forecast-details';
 import ErrorMessage from './components/error';
-import searchForm from './components/search';
+import SearchForm from './components/search';
 import './styles/app.css';
 
 
@@ -16,7 +16,7 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState(false);
 
   useEffect(() => {
-    axios.get('https://mcr-codes-weather.herokuapp.com/forecast?city=Llangollen')
+    axios.get('https://mcr-codes-weather.herokuapp.com/forecast?city=')
     .then(res => {
         setLocation(res.data.location)
         setForecasts(res.data.forecasts)
@@ -49,6 +49,10 @@ const searchCity = () => {
 
     return (
       <div>
+        <SearchForm
+          onSearch={searchCity}
+          searchText={searchText}
+          setSearchText={setSearchText}/>
         <LocationDetails
           city={location.city}
           country={location.country}/>
@@ -58,11 +62,7 @@ const searchCity = () => {
           {
           selectedForecast && (<ForecastDetails forecast={selectedForecast} />)
           }
-          {errorMessage && (<ErrorMessage errorMessage={errorMessage}/>)}
-        <searchForm
-          onSearch={searchCity}
-          searchText={searchText}
-          setSearchText={setSearchText}/> 
+          {errorMessage && (<ErrorMessage errorMessage={errorMessage}/>)} 
       </div>
     )
 };

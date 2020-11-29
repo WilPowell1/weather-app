@@ -2,24 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/search.css';
 
-const searchForm = (props) => {
+const SearchForm = (props) => {
     const handleInputChange = (event) => {
         props.setSearchText(event.target.value)
 
     }
+
     return (
         <div className="search-form">
-            <input className="input" data-testid="input-id" type="text" placeholder="Search for..." value={props.searchText} onChange={handleInputChange}/>
+            <input className="input" data-testid="input-id" type="text" placeholder="Search..." value={props.searchText} onChange={handleInputChange}/>
             
-            <button className="button" data-testid="button-id" onClick={props.onSearch}>search</button>
+            <button className="search-button" data-testid="button-id" onClick={props.onSearch}>Search</button>
         </div>
     )
 }
 
-searchForm.propTypes = {
+SearchForm.propTypes = {
     searchText: PropTypes.string,
     setSearchText: PropTypes.func,
     handleInputChange: PropTypes.func
 }
 
-export default searchForm;
+export default SearchForm;

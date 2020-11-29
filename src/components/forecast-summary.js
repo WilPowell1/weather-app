@@ -6,7 +6,7 @@ import moment from 'moment';
 
 const ForecastSummary = (props) => {
   return (
-    <div className="container">
+    <div className="forecast-summary">
         <div className="date" data-testid="date-id">
           {moment(props.date).format("dddd Do MMM")}       
         </div>
@@ -19,13 +19,13 @@ const ForecastSummary = (props) => {
         <div className="description" data-testid="description-id">
           {props.description}
         </div>
-        <button onClick={() => props.onSelect(props.date)}>more details</button>
+        <button className="more-details" onClick={() => props.onSelect(props.date)}>more details</button>
     </div>
   );
 };
 
 ForecastSummary.propTypes = {
-    date: PropTypes.number,
+  date: PropTypes.number,
     temperature: PropTypes.any,
     description: PropTypes.string,
     icon: PropTypes.any,

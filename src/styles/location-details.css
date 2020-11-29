@@ -6,6 +6,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    margin-top: 30px;
     background: transparent;
+    transition: 100ms linear;
 }
