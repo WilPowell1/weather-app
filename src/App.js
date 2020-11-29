@@ -53,6 +53,7 @@ const searchCity = () => {
           onSearch={searchCity}
           searchText={searchText}
           setSearchText={setSearchText}/>
+          {errorMessage && (<ErrorMessage errorMessage={errorMessage}/>)} 
         <LocationDetails
           city={location.city}
           country={location.country}/>
@@ -62,7 +63,6 @@ const searchCity = () => {
           {
           selectedForecast && (<ForecastDetails forecast={selectedForecast} />)
           }
-          {errorMessage && (<ErrorMessage errorMessage={errorMessage}/>)} 
       </div>
     )
 };
