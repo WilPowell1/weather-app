@@ -30,6 +30,13 @@
     outline: none;
     text-transform: uppercase;
     font-weight: bold;
+    transition: 200ms linear;
+  }
+
+  .search-button:hover {
+    background: #fc913a;
+    color: #fff;
+    border: 3px solid #fc913a;
   }
 
   .search-button:active {

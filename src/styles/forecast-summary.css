@@ -47,7 +47,7 @@
     cursor: pointer;
     background: transparent;
     color: white;
-    transition: 250ms linear;
+    transition: 200ms linear;
 }
 
 .more-details:hover {
