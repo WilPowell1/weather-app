@@ -34,7 +34,7 @@ const searchCity = () => {
     })
     .catch(err => {
         if(err.response.status === 404) {
-            setErrorMessage('can not be found')
+            setErrorMessage('cannot be found')
         } else {
             setErrorMessage('Server error')
         }
