@@ -1,33 +1,29 @@
 .search-form {
-    display: inline-flex;
-    margin: 2% 32%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
     border: 3px solid white;
     border-radius: 50px;
-
-    
+    width: 400px;
+    margin-top: 1%;
   }
 
   .input{
     width: 300px;
+    border: transparent;
     background: transparent;
-    padding: 0px 30px;
     border-radius: 50px 0 0 50px;
-    border: 0.1px solid white;
-    outline: none;
-    font-size: 18px;
-    color: rgb(61, 61, 61);
+    padding: 3%;
   }
   
   .search-button {
-    top: 20px;
-    right: 50px;
     cursor: pointer;
     color: #fc913a;
     background: #fff;
     border: 3px solid white;
     width: 120px;
     height: 55px;
-    border-radius: 0 50px 50px 0;
+    border-radius: 50px;
     outline: none;
     text-transform: uppercase;
     font-weight: bold;
