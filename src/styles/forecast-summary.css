@@ -17,6 +17,7 @@
 .forecast-summary:hover {
     /*background-image: url(../images/clear1.jpg);*/
     border: 2px solid #fc913a;
+    transform: scale(1.1);
 }
 
 .date {
@@ -53,7 +54,7 @@
     background: #fc913a;
     color: #fff;
     border: 1px solid #fc913a;
-}
+}   
 
 .more-details:active {
     background: transparent;
