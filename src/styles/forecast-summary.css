@@ -3,7 +3,7 @@
     color: rgb(245, 236, 236);
     display: flex;
     flex-direction: column;
-    margin: 0 0.8% 2%;
+    margin: 0 1% 3%;
     align-items: center;
     justify-content: space-around;
     height: 350px;
@@ -11,7 +11,7 @@
     border: 2px solid transparent;
     border-radius: 20px;
     box-shadow: 3px 3px 8px rgb(51, 54, 54);
-    transition: 170ms linear;
+    transition: 170ms linear; 
 }
 
 .forecast-summary:hover {
