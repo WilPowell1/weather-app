@@ -7,9 +7,9 @@ import '../styles/forecast-details.css';
 const ForecastDetails = (props) => {
     return (
       <div className="forecast-details">
-        <h3 className="detailed-date">
+        <div className="detailed-date">
           {moment(props.forecast.date).format("dddd Do MMM")}
-        </h3>
+        </div>
         <div className="detailed-temperature">
           <div className="max-temp">
             Max Temperature: {props.forecast.temperature.max}&deg;c

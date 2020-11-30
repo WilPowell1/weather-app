@@ -4,17 +4,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 140px;
+    height: auto;
     width: 220px;
     border-radius: 20px;
     box-shadow: 3px 3px 8px rgb(51, 54, 54);
-    padding: 0 0 2%;
+    padding: 1% 0 1%;
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
 }
 
-h3 {
+.detailed-date {
     color: #fc913a;
-    font-weight: 500;
+    font-size: 18px;
+    padding: 0 0 2%;
 }
