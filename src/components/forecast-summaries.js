@@ -4,10 +4,14 @@ import ForecastSummary from './forecast-summary'
 import '../styles/forecast-summaries.css'
 
 const ForecastSummaries = props => (
-    <div className='forecast-summaries'>
+    <div className='forecast-summaries' 
+        onMouseEnter={() => props.setBgColour("#c83f49")}
+        onMouseLeave={() => props.setBgColour("#fafafa")}
+    >
         {
             props.forecasts.map(forecast => (
-                <ForecastSummary 
+                <ForecastSummary
+                 
                 key={forecast.date}
                 date={forecast.date}
                 description={forecast.description}

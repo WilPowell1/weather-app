@@ -5,7 +5,7 @@ import ForecastSummaries from './components/forecast-summaries';
 import ForecastDetails from './components/forecast-details';
 import ErrorMessage from './components/error';
 import SearchForm from './components/search';
-import './styles/app.css';
+/*import './styles/app.css';*/
 
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
   const [searchText, setSearchText] = useState("");
   const [location, setLocation] = useState({ city:"", country:"" });
   const [errorMessage, setErrorMessage] = useState(false);
-  /*const [bgColour, setBgColour] = useState("#fafafa");*/
+  const [bgColour, setBgColour] = useState("#fafafa");
 
   useEffect(() => {
     axios.get('https://mcr-codes-weather.herokuapp.com/forecast?city=')
@@ -48,7 +48,7 @@ const searchCity = () => {
     setSelectedDate(date);
   };
 
-  /*const appStyles = {
+  const appStyles = {
     height: "100vh",
     background: `${bgColour}`,
   };
@@ -62,10 +62,10 @@ const searchCity = () => {
     margin: "0.5em 1em",
     padding: "0.25em 1em",
     background: "#c83f49",
-  };*/
+  };
 
     return (
-      <div /*style={appStyles}*/ >
+      <div style={appStyles} >
         <SearchForm
           setErrorMessage={setErrorMessage}
           onSearch={searchCity}
@@ -76,8 +76,8 @@ const searchCity = () => {
           city={location.city}
           country={location.country}/>
         <ForecastSummaries
-          /*style={styles}
-          onMouseEvent={setBgColour}*/
+          style={styles}
+          setBgColour={setBgColour}
           forecasts={forecasts}
           onForecastSelect={handleForecastSelect}/>
           {

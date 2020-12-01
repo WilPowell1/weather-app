@@ -5,8 +5,9 @@ import '../styles/forecast-details.css';
 
 
 const ForecastDetails = (props) => {
+
     return (
-      <div className="forecast-details">
+      <div className="forecast-details" >
         <div className="detailed-date">
           {moment(props.forecast.date).format("dddd Do MMM")}
         </div>
