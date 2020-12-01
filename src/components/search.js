@@ -16,9 +16,14 @@ const SearchForm = (props) => {
         resetInputField();
     }
 
+    const resetErrorMessage = () => {
+        props.setErrorMessage(false);
+    }
+
     return (
         <div className="search-form">
-            <input className="input" data-testid="input-id" type="text" placeholder="Search..." value={props.searchText} onChange={handleInputChange} />
+            <input className="input" data-testid="input-id" type="text" placeholder="Search..." value={props.searchText} onChange={handleInputChange}
+            onClick={resetErrorMessage} />
             
             <button className="search-button" data-testid="button-id" onClick={clickSearch}>Search</button> 
         </div>

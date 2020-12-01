@@ -67,6 +67,7 @@ const searchCity = () => {
     return (
       <div /*style={appStyles}*/ >
         <SearchForm
+          setErrorMessage={setErrorMessage}
           onSearch={searchCity}
           searchText={searchText}
           setSearchText={setSearchText}/>
