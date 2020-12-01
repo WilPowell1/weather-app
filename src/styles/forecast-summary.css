@@ -15,7 +15,6 @@
 }
 
 .forecast-summary:hover {
-    /*background-image: url(../images/clear1.jpg);*/
     border: 2px solid #fc913a;
     transform: scale(1.05);
 }

@@ -5,8 +5,11 @@ import '../styles/forecast-summary.css';
 import moment from 'moment';
 
 const ForecastSummary = (props) => {
+
   return (
-    <div className="forecast-summary">
+    <div className="forecast-summary" /*style={props.styles} onMouseEnter={() => props.setBgColour("#c83f49")}
+    onMouseLeave={() => props.setBgColour("#fafafa")}*/
+  >
         <div className="date" data-testid="date-id">
           {moment(props.date).format("dddd Do MMM")}       
         </div>

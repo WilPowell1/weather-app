@@ -14,6 +14,7 @@ const App = () => {
   const [searchText, setSearchText] = useState("");
   const [location, setLocation] = useState({ city:"", country:"" });
   const [errorMessage, setErrorMessage] = useState(false);
+  /*const [bgColour, setBgColour] = useState("#fafafa");*/
 
   useEffect(() => {
     axios.get('https://mcr-codes-weather.herokuapp.com/forecast?city=')
@@ -47,8 +48,24 @@ const searchCity = () => {
     setSelectedDate(date);
   };
 
+  /*const appStyles = {
+    height: "100vh",
+    background: `${bgColour}`,
+  };
+
+  const styles = {
+    width: "100px",
+    fontSize: "20px",
+    borderRadius: "40px",
+    border: "1px solid black",
+    color: "white",
+    margin: "0.5em 1em",
+    padding: "0.25em 1em",
+    background: "#c83f49",
+  };*/
+
     return (
-      <div>
+      <div /*style={appStyles}*/ >
         <SearchForm
           onSearch={searchCity}
           searchText={searchText}
@@ -57,7 +74,9 @@ const searchCity = () => {
         <LocationDetails
           city={location.city}
           country={location.country}/>
-        <ForecastSummaries 
+        <ForecastSummaries
+          /*style={styles}
+          onMouseEvent={setBgColour}*/
           forecasts={forecasts}
           onForecastSelect={handleForecastSelect}/>
           {
