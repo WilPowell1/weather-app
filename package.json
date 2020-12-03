@@ -14,7 +14,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons-weather": "^1.0.5",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "styled-components": "^5.2.1",
+    "typeface-roboto": "^1.1.13"
   },
   "scripts": {
     "start": "react-scripts start",

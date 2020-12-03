@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {createGlobalStyle} from 'styled-components';
 import LocationDetails from './components/location-details';
 import ForecastSummaries from './components/forecast-summaries';
 import ForecastDetails from './components/forecast-details';
 import ErrorMessage from './components/error';
 import SearchForm from './components/search';
-/*import './styles/app.css';*/
 
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
   const [searchText, setSearchText] = useState("");
   const [location, setLocation] = useState({ city:"", country:"" });
   const [errorMessage, setErrorMessage] = useState(false);
-  const [bgColour, setBgColour] = useState("#fafafa");
+  const [bgColour, setBgColour] = useState({backgroundColor: "linear-gradient(90deg, rgb(82, 120, 151) 0%, rgb(206, 223, 230)35%)"});
 
   useEffect(() => {
     axios.get('https://mcr-codes-weather.herokuapp.com/forecast?city=')
@@ -47,25 +47,27 @@ const searchCity = () => {
   const handleForecastSelect = (date) => {
     setSelectedDate(date);
   };
+  
+  /*styled component*/
 
-  const appStyles = {
-    height: "100vh",
-    background: `${bgColour}`,
-  };
+  const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-  const styles = {
-    width: "100px",
-    fontSize: "20px",
-    borderRadius: "40px",
-    border: "1px solid black",
-    color: "white",
-    margin: "0.5em 1em",
-    padding: "0.25em 1em",
-    background: "#c83f49",
+    body {
+      font-family: Roboto;
+      margin: 0;
+      padding: 0;
+      background: ${bgColour};
+  }`;
+
+  const forecastHover = (hover, res) => {
+    if (hover === setForecasts(res.data.forecasts)) 
+      return setBgColour({ backgroundColor: "#fafafa" });
   };
 
     return (
-      <div style={appStyles} >
+      <div>
+        <GlobalStyle />
         <SearchForm
           setErrorMessage={setErrorMessage}
           onSearch={searchCity}
@@ -76,12 +78,12 @@ const searchCity = () => {
           city={location.city}
           country={location.country}/>
         <ForecastSummaries
-          style={styles}
-          setBgColour={setBgColour}
           forecasts={forecasts}
-          onForecastSelect={handleForecastSelect}/>
+          onForecastSelect={handleForecastSelect}setBgColour={setBgColour}
+          forecastHover={forecastHover}/>
           {
-          selectedForecast && (<ForecastDetails forecast={selectedForecast} />)
+          selectedForecast && (<ForecastDetails
+          forecast={selectedForecast} />)
           }
       </div>
     )
