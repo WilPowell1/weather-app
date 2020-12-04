@@ -7,9 +7,9 @@ import moment from 'moment';
 const ForecastSummary = (props) => {
 
   return (
-    <div className="forecast-summary" 
-      onMouseEnter={() => props.setBgColour(props.forecastHover)}
-      onMouseLeave={() => props.setBgColour("linear-gradient(90deg, rgb(82, 120, 151) 0%, rgb(206, 223, 230)35%)")} >
+      <div className="forecast-summary"
+      /*onMouseEnter={() => props.setBgColour("linear-gradient(90deg, rgb(82, 120, 151) 0%, rgb(206, 223, 230)35%)")}
+      onMouseLeave={() => props.setBgColour("linear-gradient(90deg, rgb(82, 120, 151) 0%, rgb(206, 223, 230)35%)")}*/ >
         <div className="date" data-testid="date-id">
           {moment(props.date).format("dddd Do MMM")}       
         </div>

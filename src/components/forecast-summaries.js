@@ -15,7 +15,6 @@ const ForecastSummaries = props => (
                 icon={forecast.icon}
                 onSelect={props.onForecastSelect}
                 setBgColour={props.setBgColour}
-                style={props.styles}
                 />
             ))
         }
