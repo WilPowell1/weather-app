@@ -1,14 +1,9 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import ForecastSummary from "../components/ForecastSummary";
+import React from 'react';
+import { render } from '@testing-library/react';
+import ForecastSummary from '../components/ForecastSummary';
 
-import React from "react";
-import { render } from "@testing-library/react";
-import ForecastSummary from "../components/ForecastSummary";
-
-describe("ForecastSummary", () => {
-
-  it("renders correctly", () => {
+describe('ForecastSummary', () => {
+  it('renders correctly', () => {
     const { asFragment } = render(
       <ForecastSummary
         date="mockDate"
@@ -21,7 +16,7 @@ describe("ForecastSummary", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-it("renders the correct props", () => {
+  it('renders the correct props', () => {
     const { getByText } = render(
       <ForecastSummary
         date="mockDate"
@@ -31,9 +26,9 @@ it("renders the correct props", () => {
       />
     );
 
-    expect(getByText("mockDate")).toHaveClass("date");
-    expect(getByText("mockTemperature")).toHaveClass("temperature");
-    expect(getByText("mockDescription")).toHaveClass("description");
-    expect(getByText("mockIcon")).toHaveClass("icon");
+    expect(getByText('mockDate')).toHaveClass('date');
+    expect(getByText('mockTemperature')).toHaveClass('temperature');
+    expect(getByText('mockDescription')).toHaveClass('description');
+    expect(getByText('mockIcon')).toHaveClass('icon');
   });
 });

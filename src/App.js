@@ -8,47 +8,52 @@ import ErrorMessage from './components/error';
 import SearchForm from './components/search';
 import './styles/app.css';
 
-
 const App = () => {
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState('');
   const [forecasts, setForecasts] = useState([]);
-  const [searchText, setSearchText] = useState("");
-  const [location, setLocation] = useState({ city:"", country:"" });
+  const [searchText, setSearchText] = useState('');
+  const [location, setLocation] = useState({ city: '', country: '' });
   const [errorMessage, setErrorMessage] = useState(false);
   /*const [bgColour, setBgColour] = useState({ backgroundColor: "linear-gradient(90deg, rgb(82, 120, 151) 0%, rgb(206, 223, 230)35%)" });*/
 
   useEffect(() => {
-    axios.get('https://mcr-codes-weather.herokuapp.com/forecast?city=')
-    .then(res => {
-        setLocation(res.data.location)
-        setForecasts(res.data.forecasts)
-    })
-    .catch(err => {
-        console.log(err)
-    })
-}, [])
+    axios
+      .get('https://mcr-codes-weather.herokuapp.com/forecast?city=')
+      .then((res) => {
+        setLocation(res.data.location);
+        setForecasts(res.data.forecasts);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-const searchCity = () => {
-    axios.get(`https://mcr-codes-weather.herokuapp.com/forecast?city=${searchText}`)
-    .then((res) => {
-        setLocation(res.data.location)
-        setForecasts(res.data.forecasts)
-    })
-    .catch(err => {
-        if(err.response.status === 404) {
-            setErrorMessage('cannot be found')
+  const searchCity = () => {
+    axios
+      .get(
+        `https://mcr-codes-weather.herokuapp.com/forecast?city=${searchText}`
+      )
+      .then((res) => {
+        setLocation(res.data.location);
+        setForecasts(res.data.forecasts);
+      })
+      .catch((err) => {
+        if (err.response.status === 404) {
+          setErrorMessage('cannot be found');
         } else {
-            setErrorMessage('Server error')
+          setErrorMessage('Server error');
         }
-    })
-}
+      });
+  };
 
-  const selectedForecast = forecasts.find(forecast => forecast.date === selectedDate);
+  const selectedForecast = forecasts.find(
+    (forecast) => forecast.date === selectedDate
+  );
 
   const handleForecastSelect = (date) => {
     setSelectedDate(date);
   };
-  
+
   /*styled component*/
 
   /*const GlobalStyle = createGlobalStyle`
@@ -60,7 +65,6 @@ const searchCity = () => {
       padding: 0;
       background: ${bgColour};
   }`;*/
-  
 
   /*const forecastHover = (res) => {
     const clouds = res.data.forecasts.clouds;
@@ -76,27 +80,25 @@ const searchCity = () => {
       return setBgColour({ backgroundColor: "#fafafa" });
   };*/
 
-    return (
-      <div>
-        <SearchForm
-          setErrorMessage={setErrorMessage}
-          onSearch={searchCity}
-          searchText={searchText}
-          setSearchText={setSearchText}/>
-          {errorMessage && (<ErrorMessage errorMessage={errorMessage}/>)} 
-        <LocationDetails
-          city={location.city}
-          country={location.country}/>
-        <ForecastSummaries
-          forecasts={forecasts}
-          onForecastSelect={handleForecastSelect}/*setBgColour={setBgColour}
-          forecastHover={forecastHover}*//>
-          {
-          selectedForecast && (<ForecastDetails
-          forecast={selectedForecast} />)
-          }
-      </div>
-    )
+  return (
+    <div>
+      <SearchForm
+        setErrorMessage={setErrorMessage}
+        onSearch={searchCity}
+        searchText={searchText}
+        setSearchText={setSearchText}
+      />
+      {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
+      <LocationDetails city={location.city} country={location.country} />
+      <ForecastSummaries
+        forecasts={forecasts}
+        onForecastSelect={
+          handleForecastSelect
+        } /*setBgColour={setBgColour}forecastHover={forecastHover}*/
+      />
+      {selectedForecast && <ForecastDetails forecast={selectedForecast} />}
+    </div>
+  );
 };
 
 export default App;
